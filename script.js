@@ -1,160 +1,163 @@
-// GLOBAL DATABASE (Extend this list as much as you want!)
 const data = {
-    domestic: [{"c":"AGR","n":"Agra"},{"c":"AGX","n":"Agatti"},{"c":"AMD","n":"Ahmedabad"},{"c":"ATQ","n":"Amritsar"},{"c":"AYJ","n":"Ayodhya"},{"c":"BBI","n":"Bhubaneswar"},{"c":"BDQ","n":"Vadodara"},{"c":"BHO","n":"Bhopal"},{"c":"BLR","n":"Bengaluru"},{"c":"BOM","n":"Mumbai"},{"c":"CCU","n":"Kolkata"},{"c":"COK","n":"Kochi"},{"c":"DEL","n":"Delhi"},{"c":"GAU","n":"Guwahati"},{"c":"GOI","n":"Goa"},{"c":"HYD","n":"Hyderabad"},{"c":"IXC","n":"Chandigarh"},{"c":"JAI","n":"Jaipur"},{"c":"LKO","n":"Lucknow"},{"c":"MAA","n":"Chennai"},{"c":"PNQ","n":"Pune"},{"c":"SXR","n":"Srinagar"},{"c":"TRV","n":"Trivandrum"},{"c":"VNS","n":"Varanasi"}],
-    intl: [{"c":"DXB","n":"Dubai"},{"c":"LHR","n":"London Heathrow"},{"c":"SIN","n":"Singapore Changi"},{"c":"HND","n":"Tokyo Haneda"},{"c":"JFK","n":"New York JFK"},{"c":"FRA","n":"Frankfurt"},{"c":"CDG","n":"Paris"},{"c":"SYD","n":"Sydney"},{"c":"DOH","n":"Doha"},{"c":"BKK","n":"Bangkok"},{"c":"ICN","n":"Seoul"},{"c":"AMS","n":"Amsterdam"}],
-    airlines: [{"c":"EK","n":"Emirates"},{"c":"SQ","n":"Singapore Airlines"},{"c":"LH","n":"Lufthansa"},{"c":"BA","n":"British Airways"},{"c":"QR","n":"Qatar Airways"},{"c":"AI","n":"Air India"},{"c":"6E","n":"IndiGo"},{"c":"UK","n":"Vistara"},{"c":"QP","n":"Akasa Air"}]
+    domestic: [
+        {"c": "AGR", "n": "Agra Airport, Uttar Pradesh"}, {"c": "AGX", "n": "Agatti, Lakshadweep"}, {"c": "AJL", "n": "Aizawl Airport, Mizoram"}, {"c": "AMD", "n": "Ahmedabad, Gujarat"}, {"c": "ATQ", "n": "Amritsar, Punjab"}, {"c": "AYJ", "n": "Ayodhya, Uttar Pradesh"}, {"c": "BBI", "n": "Bhubaneswar, Odisha"}, {"c": "BDQ", "n": "Vadodara, Gujarat"}, {"c": "BEK", "n": "Rae Bareli, Uttar Pradesh"}, {"c": "BHJ", "n": "Bhuj, Gujarat"}, {"c": "BHO", "n": "Bhopal, Madhya Pradesh"}, {"c": "BHU", "n": "Bhavnagar, Gujarat"}, {"c": "BLR", "n": "Bengaluru, Karnataka"}, {"c": "BOM", "n": "Mumbai, Maharashtra"}, {"c": "CCJ", "n": "Calicut, Kerala"}, {"c": "CCU", "n": "Kolkata, West Bengal"}, {"c": "CJB", "n": "Coimbatore, Tamil Nadu"}, {"c": "CNN", "n": "Kannur, Tamil Nadu"}, {"c": "COK", "n": "Kochi, Kerala"}, {"c": "DBR", "n": "Dibrugarh, Assam"}, {"c": "DED", "n": "Dehradun, Uttarakhand"}, {"c": "DEL", "n": "IG Airport, Delhi"}, {"c": "DGH", "n": "Deoghar, Jharkhand"}, {"c": "DHM", "n": "Dharamshala, Himachal Pradesh"}, {"c": "DIB", "n": "Dibrugarh, Assam"}, {"c": "DIU", "n": "Diu, Daman and Diu"}, {"c": "DMU", "n": "Dimapur, Nagaland"}, {"c": "GAU", "n": "Guwahati, Assam"}, {"c": "GAY", "n": "Gaya, Bihar"}, {"c": "GDB", "n": "Gondia, Maharashtra"}, {"c": "GOI", "n": "Dabolim Airport, Goa"}, {"c": "GOP", "n": "Gorakhpur, Uttar Pradesh"}, {"c": "GOX", "n": "Mopa, Goa"}, {"c": "GWL", "n": "Gwalior, Madhya Pradesh"}, {"c": "HBX", "n": "Hubli, Karnataka"}, {"c": "HDO", "n": "Ghaziabad, Uttar Pradesh"}, {"c": "HGI", "n": "Itanagar, Arunachal Pradesh"}, {"c": "HJR", "n": "Khajuraho, Madhya Pradesh"}, {"c": "HYD", "n": "Hyderabad, Telangana"}, {"c": "IDR", "n": "Indore, Madhya Pradesh"}, {"c": "IMF", "n": "Imphal, Manipur"}, {"c": "ISK", "n": "Nashik, Maharashtra"}, {"c": "IXA", "n": "Agartala, Tripura"}, {"c": "IXB", "n": "Siliguri, West Bengal"}, {"c": "IXC", "n": "Chandigarh"}, {"c": "IXD", "n": "Prayagraj, Uttar Pradesh"}, {"c": "IXE", "n": "Mangalore, Karnataka"}, {"c": "IXG", "n": "Belgaum, Karnataka"}, {"c": "IXI", "n": "Lilabari, Assam"}, {"c": "IXJ", "n": "Jammu, Jammu & Kashmir"}, {"c": "IXL", "n": "Leh, Ladakh"}, {"c": "IXM", "n": "Madurai, Tamil Nadu"}, {"c": "IXR", "n": "Ranchi, Jharkhand"}, {"c": "IXS", "n": "Silchar, Assam"}, {"c": "IXU", "n": "Aurangabad, Maharashtra"}, {"c": "IXY", "n": "Kandla, Gujarat"}, {"c": "IXZ", "n": "Port Blair, Andaman and Nicobar Islands"}, {"c": "JAI", "n": "Jaipur, Rajasthan"}, {"c": "JDH", "n": "Jodhpur, Rajasthan"}, {"c": "JGB", "n": "Jagdalpur, Chhattisgarh"}, {"c": "JLR", "n": "Jabalpur, Madhya Pradesh"}, {"c": "JRG", "n": "Jharsuguda, Odisha"}, {"c": "JRH", "n": "Jorhat, Assam"}, {"c": "JSA", "n": "Jaisalmer, Rajasthan"}, {"c": "KBK", "n": "Kushinagar, Uttar Pradesh"}, {"c": "KJB", "n": "Kurnool, Andhra Pradesh"}, {"c": "KLH", "n": "Kolhapur, Maharashtra"}, {"c": "KNU", "n": "Kanpur, Uttar Pradesh"}, {"c": "KQH", "n": "Kishangarh, Rajasthan"}, {"c": "LKO", "n": "Lucknow, Uttar Pradesh"}, {"c": "MAA", "n": "Chennai, Tamil Nadu"}, {"c": "MYQ", "n": "Mysore, Karnataka"}, {"c": "NAG", "n": "Nagpur, Maharashtra"}, {"c": "PAT", "n": "Patna, Bihar"}, {"c": "PBD", "n": "Porbandar, Gujarat"}, {"c": "PGH", "n": "Pantnagar, Uttarakhand"}, {"c": "PNQ", "n": "Pune, Maharashtra"}, {"c": "PNY", "n": "Pondicherry"}, {"c": "RAJ", "n": "Rajkot, Gujarat"}, {"c": "RDP", "n": "Durgapur, West Bengal"}, {"c": "RJA", "n": "Rajahmundry, Andhra Pradesh"}, {"c": "RPR", "n": "Raipur, Chhattisgarh"}, {"c": "RQY", "n": "Shivamogga, Karnataka"}, {"c": "SAG", "n": "Shirdi, Maharashtra"}, {"c": "SHL", "n": "Shillong, Meghalaya"}, {"c": "SLM", "n": "Salem, Tamil Nadu"}, {"c": "STV", "n": "Surat, Gujarat"}, {"c": "SXR", "n": "Srinagar, Jammu & Kashmir"}, {"c": "TCR", "n": "Tuticorin, Tamil Nadu"}, {"c": "TIR", "n": "Tirupati, Andhra Pradesh"}, {"c": "TRV", "n": "Trivandrum, Kerala"}, {"c": "TRZ", "n": "Trichy, Tamil Nadu"}, {"c": "UDR", "n": "Udaipur, Rajasthan"}, {"c": "VGA", "n": "Vijayawada, Andhra Pradesh"}, {"c": "VNS", "n": "Varanasi, Uttar Pradesh"}, {"c": "VTZ", "n": "Visakhapatnam, Andhra Pradesh"}
+    ],
+    intl: [
+        {"c": "ATL", "n": "Hartsfield-Jackson Atlanta International Airport"}, {"c": "DXB", "n": "Dubai International Airport"}, {"c": "DFW", "n": "Dallas/Fort Worth International Airport"}, {"c": "HND", "n": "Tokyo Haneda Airport"}, {"c": "LHR", "n": "London Heathrow Airport"}, {"c": "DEN", "n": "Denver International Airport"}, {"c": "IST", "n": "Istanbul Airport"}, {"c": "ORD", "n": "O'Hare International Airport (Chicago)"}, {"c": "DEL", "n": "Indira Gandhi International Airport (Delhi)"}, {"c": "PVG", "n": "Shanghai Pudong International Airport"}, {"c": "LAX", "n": "Los Angeles International Airport"}, {"c": "CAN", "n": "Guangzhou Baiyun International Airport"}, {"c": "JFK", "n": "John F. Kennedy International Airport (New York)"}, {"c": "AMS", "n": "Amsterdam Airport Schiphol"}, {"c": "MAD", "n": "Madrid-Barajas Adolfo Suárez Airport"}, {"c": "FRA", "n": "Frankfurt Airport"}, {"c": "ICN", "n": "Seoul Incheon International Airport"}, {"c": "SIN", "n": "Singapore Changi Airport"}, {"c": "BCN", "n": "Barcelona-El Prat Airport"}, {"c": "MIA", "n": "Miami International Airport"}, {"c": "YYZ", "n": "Toronto Pearson International Airport"}, {"c": "PEK", "n": "Beijing Capital International Airport"}, {"c": "CLT", "n": "Charlotte Douglas International Airport"}, {"c": "PHX", "n": "Phoenix Sky Harbor International Airport"}, {"c": "IAH", "n": "Houston George Bush Intercontinental Airport"}, {"c": "EWR", "n": "Newark Liberty International Airport"}, {"c": "SEA", "n": "Seattle-Tacoma International Airport"}, {"c": "LGW", "n": "London Gatwick Airport"}, {"c": "GRU", "n": "São Paulo–Guarulhos International Airport"}, {"c": "BOS", "n": "Boston Logan International Airport"}, {"c": "MUC", "n": "Munich Airport"}, {"c": "LAS", "n": "Las Vegas Harry Reid International Airport"}, {"c": "SZX", "n": "Shenzhen Bao’an International Airport"}, {"c": "MEX", "n": "Mexico City International Airport"}, {"c": "PKX", "n": "Beijing Daxing International Airport"}, {"c": "SHA", "n": "Shanghai Hongqiao International Airport"}, {"c": "OSL", "n": "Oslo Gardermoen Airport"}, {"c": "ZRH", "n": "Zurich Airport"}, {"c": "CPH", "n": "Copenhagen Airport"}, {"c": "FCO", "n": "Rome Fiumicino Airport"}, {"c": "VIE", "n": "Vienna International Airport"}, {"c": "LIS", "n": "Lisbon Portela Airport"}, {"c": "DOH", "n": "Doha Hamad International Airport"}, {"c": "BKK", "n": "Suvarnabhumi Airport"}, {"c": "KUL", "n": "Kuala Lumpur International Airport"}, {"c": "HKG", "n": "Hong Kong International Airport"}, {"c": "MEL", "n": "Melbourne Airport"}, {"c": "SYD", "n": "Sydney Kingsford Smith Airport"}, {"c": "AKL", "n": "Auckland Airport"}
+    ],
+    airlines: [
+        {"c": "EK", "n": "Emirates"}, {"c": "JL", "n": "Japan Airlines"}, {"c": "SQ", "n": "Singapore Airlines"}, {"c": "LH", "n": "Lufthansa"}, {"c": "AT", "n": "Royal Air Maroc"}, {"c": "BA", "n": "British Airways"}, {"c": "QR", "n": "Qatar Airways"}, {"c": "CX", "n": "Cathay Pacific"}, {"c": "KE", "n": "Korean Air"}, {"c": "NH", "n": "All Nippon Airways (ANA)"}, {"c": "BR", "n": "EVA Air"}, {"c": "AY", "n": "Finnair"}, {"c": "TG", "n": "Thai Airways"}, {"c": "VN", "n": "Vietnam Airlines"}, {"c": "MH", "n": "Malaysia Airlines"}, {"c": "WY", "n": "Oman Air"}, {"c": "TK", "n": "Turkish Airlines"}, {"c": "EY", "n": "Etihad Airways"}, {"c": "OZ", "n": "Asiana Airlines"}, {"c": "K6", "n": "Air Cambodia"}, {"c": "AZ", "n": "ITA Airways"}, {"c": "G9", "n": "Air Arabia"}, {"c": "AK", "n": "AirAsia"}, {"c": "KC", "n": "Air Astana"}, {"c": "AC", "n": "Air Canada"}, {"c": "CA", "n": "Air China"}, {"c": "AF", "n": "Air France"}, {"c": "AI", "n": "Air India"}, {"c": "MK", "n": "Air Mauritius"}, {"c": "HM", "n": "Air Seychelles"}, {"c": "TC", "n": "Air Tanzania"}, {"c": "QP", "n": "Akasa Air"}, {"c": "AA", "n": "American Airlines"}, {"c": "OS", "n": "Austrian Airlines"}, {"c": "OD", "n": "Batik Air Malaysia"}, {"c": "SN", "n": "Brussels Airlines"}, {"c": "CI", "n": "China Airlines"}, {"c": "DL", "n": "Delta Air Lines"}, {"c": "KB", "n": "Druk Air"}, {"c": "MS", "n": "EgyptAir"}, {"c": "LY", "n": "El Al Airlines"}, {"c": "ET", "n": "Ethiopian Airlines"}, {"c": "FJ", "n": "Fiji Airways"}, {"c": "W2", "n": "FlexFlight"}, {"c": "S9", "n": "FlyBig"}, {"c": "FZ", "n": "flydubai"}, {"c": "XY", "n": "Flynas"}, {"c": "GF", "n": "Gulf Air"}, {"c": "HR", "n": "Hahn Air"}, {"c": "6E", "n": "IndiGo"}, {"c": "J9", "n": "Jazeera Airways"}, {"c": "JQ", "n": "Jetstar"}, {"c": "KQ", "n": "Kenya Airways"}, {"c": "KU", "n": "Kuwait Airways"}, {"c": "JJ", "n": "LATAM Airlines Brasil"}, {"c": "LO", "n": "LOT Polish Airlines"}, {"c": "8M", "n": "Myanmar Airways Intl"}, {"c": "NO", "n": "Neos S.p.A"}, {"c": "NZ", "n": "Air New Zealand"}, {"c": "QF", "n": "Qantas"}, {"c": "RJ", "n": "Royal Jordanian"}, {"c": "RA", "n": "Royal Nepal"}, {"c": "WB", "n": "RwandAir"}, {"c": "OV", "n": "SalamAir"}, {"c": "SK", "n": "Scandinavian Airlines (SAS)"}, {"c": "TR", "n": "Scoot"}, {"c": "SA", "n": "South African Airways"}, {"c": "UL", "n": "SriLankan"}, {"c": "9I", "n": "Alliance Air"}, {"c": "SL", "n": "Thai Lion"}, {"c": "UK", "n": "Vistara"}, {"c": "VS", "n": "Virgin Atlantic"}, {"c": "UA", "n": "United Airlines"}, {"c": "US", "n": "US Airways"}
+    ]
 };
 
-// CAREER DATA
-let career = JSON.parse(localStorage.getItem('aeroCareerFinal')) || { xp: 0, log: [], weakSpots: [] };
-let game = { queue: [], index: 0, stats: {}, isBoss: false, pathIndex: 0 };
-let timer;
+let gameQueue = [];
+let currentMode = 'domestic';
+let stats = { tq: 0, c: 0, w: 0, p: 0 };
+let currentQuestion = {};
+let timerInterval;
+let timeLeft = 10;
+const MAX_QUESTIONS = 20;
 
-// SAVE & UI
-function save() { localStorage.setItem('aeroCareerFinal', JSON.stringify(career)); }
-
-function updateMenuUI() {
-    let level = Math.floor(career.xp / 500) + 1;
-    document.getElementById('display-lvl').innerText = level;
-    document.getElementById('xp-bar-fill').style.width = (career.xp % 500 / 5) + "%";
-    document.getElementById('current-xp').innerText = career.xp % 500;
-    document.getElementById('weak-count').innerText = career.weakSpots.length;
-    document.getElementById('license-rank').innerText = level > 5 ? "ATPL" : "PPL";
-    const ranks = ["Student", "Cadet", "First Officer", "Captain", "Senior Captain", "Legend"];
-    document.getElementById('display-rank-name').innerText = ranks[Math.min(level-1, 5)];
+// Helper to shuffle any array
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
 }
 
-// GAME LOGIC
+function searchEngine() {
+    let input = document.getElementById('search-input').value.toUpperCase().trim();
+    let res = document.getElementById('search-results');
+    if (input.length < 2) { res.innerHTML = ""; return; }
+    const all = [...data.domestic, ...data.intl, ...data.airlines];
+    let match = all.find(a => a.c === input) || all.find(a => a.n.toUpperCase().includes(input));
+    if (match) { 
+        res.innerHTML = `<div style="color:#2c3e50; padding:12px; background:#e1f5fe; border-radius:8px; border-left: 5px solid #3498db; text-align: left;">
+            <small style="color:#3498db; font-weight:bold; display:block; font-size: 0.7em;">IDENTIFIED</small>
+            <b>${match.c}</b> — ${match.n}</div>`; 
+    } else { 
+        res.innerHTML = "<div style='color:#e74c3c; padding:8px; font-size:0.85em;'>❌ No match found</div>"; 
+    }
+}
+
 function startGame(mode) {
-    game.isBoss = false;
-    game.index = 0;
-    game.stats = { c: 0, w: 0, p: 0, streak: 0 };
-    game.queue = [...data[mode]].sort(() => Math.random() - 0.5).slice(0, 20);
+    stats = { tq: 0, c: 0, w: 0, p: 0 };
+    currentMode = mode;
+    
+    // NO-REPEAT FIX: Create a shuffled queue of the selected data
+    gameQueue = shuffle([...data[mode]]);
+    
     document.getElementById('menu').classList.remove('active');
     document.getElementById('game').classList.add('active');
-    document.getElementById('route-tracker').style.display = 'none';
+    document.getElementById('timer-container').style.display = "block";
+    
+    let labels = { 'domestic': 'Indian Airport', 'intl': 'International Airport', 'airlines': 'Airline Carrier' };
+    document.getElementById('mode-label').innerText = labels[mode];
+    
+    updateUI();
     nextQuestion();
 }
 
-function startFlightPath() {
-    game.isBoss = true;
-    game.pathIndex = 0;
-    game.stats = { c: 0, w: 0, p: 0, streak: 0 };
-    let pool = [...data.domestic, ...data.intl].sort(() => Math.random() - 0.5);
-    game.queue = pool.slice(0, 5);
-    document.getElementById('menu').classList.remove('active');
-    document.getElementById('game').classList.add('active');
-    document.getElementById('route-tracker').style.display = 'block';
-    renderPath();
-}
-
-function nextQuestion() {
-    if (game.index >= game.queue.length) return finish();
-    
-    let q = game.queue[game.index];
-    let isRev = document.getElementById('reverse-mode-toggle').checked;
-    let isHard = document.getElementById('hard-mode-toggle').checked;
-    
-    document.getElementById('q-type-label').innerText = isRev ? "Code ➔ Name" : "Name ➔ Code";
-    document.getElementById('question-text').innerText = isRev ? q.c : q.n;
-    
-    let correct = isRev ? q.n : q.c;
-    let pool = isRev ? [...data.domestic, ...data.intl].map(x => x.n) : [...data.domestic, ...data.intl, ...data.airlines].map(x => x.c);
-    let opts = [correct, ...pool.filter(x => x !== correct).sort(() => Math.random() - 0.5).slice(0, 3)].sort();
-    
-    const box = document.getElementById('choices');
-    box.innerHTML = '';
-    opts.forEach(o => {
-        let btn = document.createElement('button');
-        btn.className = 'option-btn';
-        btn.innerText = o;
-        btn.onclick = () => check(o, correct, q);
-        box.appendChild(btn);
-    });
-    
-    startTimer(isHard ? 5 : 10);
-}
-
-function renderPath() {
-    if (game.pathIndex >= 5) return finish();
-    let q = game.queue[game.pathIndex];
-    document.getElementById('question-text').innerText = `STEP ${game.pathIndex + 1}: ${q.n}`;
-    
-    let routeDisplay = game.queue.map((item, i) => {
-        if (i < game.pathIndex) return `<span style="color:green">${item.c}</span>`;
-        return i === game.pathIndex ? `<span style="background:#fde047">?</span>` : `<span>...</span>`;
-    }).join(" ➔ ");
-    document.getElementById('route-display').innerHTML = routeDisplay;
-
-    let pool = [...data.domestic, ...data.intl].map(x => x.c);
-    let opts = [q.c, ...pool.filter(x => x !== q.c).sort(() => Math.random() - 0.5).slice(0, 3)].sort();
-    
-    const box = document.getElementById('choices');
-    box.innerHTML = '';
-    opts.forEach(o => {
-        let btn = document.createElement('button');
-        btn.className = 'option-btn';
-        btn.innerText = o;
-        btn.onclick = () => {
-            if (o === q.c) {
-                game.pathIndex++; game.stats.c++; game.stats.p += 50;
-                renderPath();
-            } else {
-                alert("CRASH! Incorrect route step. Mission Failed.");
-                location.reload();
-            }
-        };
-        box.appendChild(btn);
-    });
-}
-
-function startTimer(sec) {
-    let left = sec;
-    clearInterval(timer);
-    timer = setInterval(() => {
-        left -= 0.1;
-        document.getElementById('timer-bar').style.width = (left / sec * 100) + "%";
-        if (left <= 0) { clearInterval(timer); check(null, "TIMEOUT", game.queue[game.index]); }
+function startTimer() {
+    clearInterval(timerInterval);
+    timeLeft = 10;
+    updateTimerBar();
+    timerInterval = setInterval(() => {
+        timeLeft -= 0.1;
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            checkAnswer(null); 
+        }
+        updateTimerBar();
     }, 100);
 }
 
-function check(ans, correct, raw) {
-    clearInterval(timer);
-    document.querySelectorAll('.option-btn').forEach(b => b.disabled = true);
+function updateTimerBar() {
+    const percentage = (timeLeft / 10) * 100;
+    document.getElementById('timer-bar').style.width = percentage + "%";
+}
+
+function nextQuestion() {
+    if (stats.tq >= MAX_QUESTIONS || stats.tq >= gameQueue.length) {
+        showResults();
+        return;
+    }
+
+    document.getElementById('msg').innerText = "";
     
-    if (ans === correct) {
-        game.stats.c++; game.stats.streak++;
-        let xp = document.getElementById('hard-mode-toggle').checked ? 20 : 10;
-        career.xp += xp; game.stats.p += xp;
-        career.weakSpots = career.weakSpots.filter(w => w.c !== raw.c);
-        document.getElementById('msg').innerHTML = "<span style='color:green'>✔ Correct</span>";
+    // Pull the next item from our unique shuffled queue
+    currentQuestion = gameQueue[stats.tq]; 
+    document.getElementById('question-text').innerText = currentQuestion.n;
+    
+    // Generate 3 random wrong answers from the full dataset
+    let source = data[currentMode];
+    let options = [currentQuestion.c];
+    while(options.length < 4) {
+        let r = source[Math.floor(Math.random() * source.length)].c;
+        if(!options.includes(r)) options.push(r);
+    }
+    options = shuffle(options);
+
+    const box = document.getElementById('choices');
+    box.innerHTML = '';
+    options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = "option-btn";
+        btn.innerText = opt;
+        btn.onclick = () => checkAnswer(opt);
+        box.appendChild(btn);
+    });
+    startTimer();
+}
+
+function checkAnswer(selected) {
+    clearInterval(timerInterval);
+    const buttons = document.querySelectorAll('.option-btn');
+    buttons.forEach(btn => btn.disabled = true);
+
+    stats.tq++; 
+    
+    if(selected === currentQuestion.c) {
+        try { document.getElementById('snd-correct').play(); } catch(e){}
+        document.getElementById('msg').innerHTML = "<span style='color:green'>Correct! ✅</span>";
+        stats.c++; stats.p += 10;
     } else {
-        game.stats.w++; game.stats.streak = 0;
-        if (!career.weakSpots.some(w => w.c === raw.c)) career.weakSpots.push(raw);
-        document.getElementById('msg').innerHTML = `<span style='color:red'>✘ It was ${correct}</span>`;
+        try { document.getElementById('snd-wrong').play(); } catch(e){}
+        let revealMsg = selected === null ? "Time Out!" : "Wrong!";
+        document.getElementById('msg').innerHTML = `<span style='color:red; font-size: 0.9em;'>${revealMsg} It was ${currentQuestion.c}</span>`;
+        stats.w++;
     }
     
-    game.index++;
-    document.getElementById('q-count').innerText = `${game.index}/20`;
-    document.getElementById('streak-box').innerText = `🔥 ${game.stats.streak}`;
-    document.getElementById('xp-display').innerText = `PTS: ${game.stats.p}`;
-    setTimeout(nextQuestion, 1200);
+    updateUI();
+    setTimeout(nextQuestion, 3000); 
 }
 
-function finish() {
+function showResults() {
     document.getElementById('game').classList.remove('active');
     document.getElementById('results').classList.add('active');
-    let acc = Math.round((game.stats.c / (game.isBoss ? 5 : 20)) * 100);
-    career.log.push({ m: game.isBoss ? 'Path' : 'Quiz', a: acc, p: game.stats.p });
-    save();
-    document.getElementById('rank-display').innerText = acc === 100 ? "🥇 ACE PILOT" : "👨‍✈️ DEBRIEF COMPLETE";
-    document.getElementById('final-stats').innerHTML = `<div class='stat-card'><small>XP</small><b>+${game.stats.p}</b></div><div class='stat-card'><small>ACCURACY</small><b>${acc}%</b></div>`;
+    
+    const accuracy = Math.round((stats.c / stats.tq) * 100);
+    let rank = "";
+    
+    if (accuracy === 100) rank = "🏆 SENIOR CAPTAIN";
+    else if (accuracy >= 90) rank = "👨‍✈️ CAPTAIN";
+    else if (accuracy >= 75) rank = "✈️ FIRST OFFICER";
+    else if (accuracy >= 50) rank = "🛩️ CADET PILOT";
+    else rank = "👨‍🔧 GROUND CREW";
+
+    document.getElementById('rank-display').innerText = rank;
+    document.getElementById('final-stats').innerHTML = `
+        <div class="stat-card"><small>Total Score</small><b>${stats.p}</b></div>
+        <div class="stat-card"><small>Accuracy</small><b>${accuracy}%</b></div>
+        <div class="stat-card"><small>Correct</small><b>${stats.c}</b></div>
+        <div class="stat-card"><small>Mistakes</small><b>${stats.w}</b></div>
+    `;
 }
 
-function showTab(t) {
-    let p = document.getElementById('tab-content');
-    if (t === 'log') p.innerHTML = career.log.slice(-3).reverse().map(l => `<div>${l.m}: ${l.a}% (+${l.p} XP)</div>`).join('') || "No flights.";
-    else p.innerHTML = career.weakSpots.slice(0, 5).map(w => `<div>${w.n} (${w.c})</div>`).join('') || "No weak spots!";
+function updateUI() {
+    document.getElementById('tq').innerText = stats.tq;
+    document.getElementById('correct').innerText = stats.c;
+    document.getElementById('score').innerText = stats.p;
 }
-
-window.onload = updateMenuUI;
